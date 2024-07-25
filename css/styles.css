@@ -11044,3 +11044,53 @@ html {
 .copyright {
   background-color: #1a252f;
 }
+/* What I add */
+.sidebar {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+}
+
+.profile-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.social-icons {
+  text-align: center;
+  padding: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-nav a {
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  display: block;
+}
