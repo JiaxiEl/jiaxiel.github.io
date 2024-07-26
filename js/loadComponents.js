@@ -8,10 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(err => console.error('Failed to load header:', err));
 
   // Load the sidebar
-  fetch('sidebar.html')  // Make sure 'sidebar.html' is the correct path to your sidebar file
+  fetch('sidebar.html')
     .then(response => response.text())
     .then(html => {
       document.getElementById('sidebar-placeholder').innerHTML = html;
+      activateSidebar();
     })
     .catch(err => console.error('Failed to load sidebar:', err));
 
@@ -23,3 +24,4 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .catch(err => console.error('Failed to load footer:', err));
 });
+
