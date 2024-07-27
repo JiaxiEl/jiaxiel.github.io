@@ -10901,7 +10901,7 @@ html {
   color: #fff;
 }
 #mainNav .navbar-nav {
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
 #mainNav .navbar-nav li.nav-item a.nav-link {
   color: #fff;
@@ -10922,8 +10922,8 @@ html {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
     transition: padding-top 0.3s, padding-bottom 0.3s;
   }
   #mainNav .navbar-brand {
@@ -11096,7 +11096,7 @@ html {
 
 .container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row; /* Ensures the sidebar and main content are side by side */
 }
 
 .small-div {
@@ -11111,21 +11111,39 @@ html {
 }
 .flex-container {
   display: flex;
-  width: 100%; /* Full width of the container */
-  margin-top: 20px; /* Spacing from the main header */
+  flex-direction: row; /* Adjusts children elements to a row */
 }
 
 .sidebar {
-  flex: 1; /* Adjust size based on content needs */
-  background-color: #f4f4f4; /* Light grey background, adjust as needed */
-  padding: 20px; /* Padding inside the sidebar */
-  height: 100vh; /* Optional: full height of the viewport */
-  overflow-y: auto; /* Adds scroll to the sidebar if content overflows */
-  position: sticky; /* Make sidebar sticky */
-  top: 0; /* Stick to the top of the viewport */
+  position: sticky;
+  top: 100px;  /* Adjust this value to the height of your header */
+  height: fit-content;
+  max-height: calc(100vh - 100px);  /* Adjust the header height here too */
+  overflow-y: auto;
 }
 
 .main-content {
-  flex: 3; /* Main content takes up 3 parts of the space */
-  padding: 20px; /* Padding inside the main content */
+  flex-grow: 1; /* Allows main content to fill the rest of the horizontal space */
+  padding: 20px; /* Adds some padding inside the main content area */
 }
+.profile-info, .social-icons, .sidebar-nav {
+  padding: 10px;
+  background: #fff;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    top: 60px;  /* Smaller top value for smaller screens if header is smaller */
+    max-height: calc(100vh - 60px);
+  }
+}
+#header-placeholder {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 10px; /* Or whatever height your header is */
+  z-index: 1030; /* High z-index to keep it on top */
+  background: #fff; /* Background color if needed */
+}
+
+
+
