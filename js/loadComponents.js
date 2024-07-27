@@ -25,3 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(err => console.error('Failed to load footer:', err));
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const headerHeight = document.getElementById('header-placeholder').clientHeight;
+  document.body.style.paddingTop = `${headerHeight}px`;
+});
