@@ -1,13 +1,13 @@
 {
-  "name": " ",
+  "name": "MyPersonalSite",
   "version": "0.0.1",
-  "description": "",
+  "description": "It's about my personal information",
   "private": true,
   "keywords": [
-    ""
+    "bootstrap", "webpack", "frontend"
   ],
-  "license": "",
-  "author": "",
+  "license": "MIT",
+  "author": "Jiaxi Chen",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open --config webpack.config.dev.js",
@@ -20,5 +20,9 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4",
     "webpack-merge": "^5.10.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
   }
 }
+
