@@ -3,6 +3,7 @@ body {
   margin: 0;
   text-align: center;
   font-family: "Merriweather", serif;
+  padding-top: 56px;
 }
 
 h1 {
@@ -45,6 +46,22 @@ a {
 
 a:hover {
   color: #eaf6f6;
+}
+
+.image-container {
+  position: relative;
+  height: 100vh; /* Cover the entire viewport height */
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title-text {
+  color: white; /* Ensure text is visible over the background */
 }
 
 .top-container {
@@ -147,3 +164,43 @@ a:hover {
   text-align: left;
   row-gap: 2rem;
 }
+/* Ensure the navbar background is transparent */
+.navbar {
+  background-color: transparent !important;
+  transition: background-color 0.5s ease;
+}
+
+/* Ensure the dropdown menu has a solid background to be readable */
+.dropdown-menu {
+  background-color: #343a40; /* Adjust based on your theme */
+  border: none;
+}
+
+/* Ensure the nav links have a color that is readable over the transparent background */
+.nav-link {
+  color: #fff !important;
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-brand,
+.nav-link {
+  color: #fff;
+}
+
+/* Adjust dropdown item colors */
+.dropdown-item {
+  color: #fff;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #495057;
+}
+
