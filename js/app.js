@@ -1,67 +1,51 @@
-window.addEventListener('DOMContentLoaded', event => {
-  // Function to shrink the navbar
-  var navbarShrink = function () {
-    const navbarCollapsible = document.body.querySelector('#mainNav');
-    if (!navbarCollapsible) {
+document.addEventListener('DOMContentLoaded', function () {
+  // Load the header
+  fetch('header.html')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.getElementById('header-placeholder').innerHTML = html;
+      initializeThemeToggle();
+    })
+    .catch(err => console.error('Failed to load header:', err));
+
+  function initializeThemeToggle() {
+    const themeToggleButton = document.getElementById('theme-toggle');
+    if (!themeToggleButton) {
+      console.error('Theme toggle button not found!');
       return;
     }
-    if (window.scrollY === 0) {
-      navbarCollapsible.classList.remove('navbar-shrink')
+
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+      document.body.classList.add('dark-theme');
+      document.body.classList.remove('light-theme');
+      themeToggleButton.textContent = 'Light Theme';
     } else {
-      navbarCollapsible.classList.add('navbar-shrink')
+      document.body.classList.add('light-theme');
+      document.body.classList.remove('dark-theme');
+      themeToggleButton.textContent = 'Dark Theme';
     }
-  };
 
-  // Shrink the navbar
-  navbarShrink();
-
-  // Shrink the navbar when page is scrolled
-  document.addEventListener('scroll', navbarShrink);
-
-  // Activate Bootstrap scrollspy on the main nav element
-  const mainNav = document.body.querySelector('#mainNav');
-  if (mainNav) {
-    new bootstrap.ScrollSpy(document.body, {
-      target: '#mainNav',
-      rootMargin: '0px 0px -40%',
-    });
-  };
-
-  // Collapse responsive navbar when toggler is visible
-  const navbarToggler = document.body.querySelector('.navbar-toggler');
-  const responsiveNavItems = [].slice.call(
-    document.querySelectorAll('#navbarResponsive .nav-link')
-  );
-  responsiveNavItems.map(function (responsiveNavItem) {
-    responsiveNavItem.addEventListener('click', () => {
-      if (window.getComputedStyle(navbarToggler).display !== 'none') {
-        navbarToggler.click();
+    themeToggleButton.addEventListener('click', function () {
+      if (document.body.classList.contains('dark-theme')) {
+        document.body.classList.remove('dark-theme');
+        document.body.classList.add('light-theme');
+        themeToggleButton.textContent = 'Dark Theme';
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.body.classList.remove('light-theme');
+        document.body.classList.add('dark-theme');
+        themeToggleButton.textContent = 'Light Theme';
+        localStorage.setItem('theme', 'dark');
       }
+      console.log(`Theme changed to: ${document.body.classList.contains('dark-theme') ? 'dark' : 'light'}`);
     });
-  });
 
-  // Array of image paths
-  const images = [
-    "assets/img/Image1.jpg",
-    "assets/img/Image2.jpg",
-    "assets/img/Image3.jpg",
-    // Add more images as needed
-  ];
-
-  // Function to select a random image
-  function getRandomImage() {
-    const randomIndex = Math.floor(Math.random() * images.length);
-    return images[randomIndex];
+    console.log('Theme toggle initialized.');
   }
-
-  // Function to set the background image of the container
-  function setBackgroundImage() {
-    document.querySelector('.image-container').style.backgroundImage = `url('${getRandomImage()}')`;
-  }
-
-  // Initial background image set
-  setBackgroundImage();
-
-  // Change the background image every 5 seconds
-  setInterval(setBackgroundImage, 5000); // Adjust the interval as needed (5000ms = 5 seconds)
 });
