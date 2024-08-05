@@ -50,7 +50,7 @@ a:hover {
 
 .image-container {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 56px);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -170,7 +170,12 @@ a:hover {
   background-color: transparent !important;
   transition: background-color 0.5s ease;
 }
-
+.navbar-shrink {
+  background-color: rgba(0, 0, 0, 0.8) !important; /* Adjust this color to fit your design */
+}
+.header-placeholder {
+  height: 56px; /* Adjust this value based on the actual height of your navbar */
+}
 /* Ensure the dropdown menu has a solid background to be readable */
 .dropdown-menu {
   background-color: #343a40;

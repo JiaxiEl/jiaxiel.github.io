@@ -13,6 +13,25 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .catch(err => console.error('Failed to load header:', err));
 
+  // Function to shrink the navbar
+  var navbarShrink = function () {
+    const navbarCollapsible = document.body.querySelector('#mainNav');
+    if (!navbarCollapsible) {
+      return;
+    }
+    if (window.scrollY === 0) {
+      navbarCollapsible.classList.remove('navbar-shrink');
+    } else {
+      navbarCollapsible.classList.add('navbar-shrink');
+    }
+  };
+
+  // Shrink the navbar
+  navbarShrink();
+
+  // Shrink the navbar when page is scrolled
+  document.addEventListener('scroll', navbarShrink);
+
   function initializeThemeToggle() {
     const themeToggleButton = document.getElementById('theme-toggle');
     if (!themeToggleButton) {
