@@ -1,11 +1,95 @@
+/* General body styles */
 body {
   color: #40514e;
   margin: 0;
   text-align: center;
   font-family: "Merriweather", serif;
   padding-top: 56px;
+  transition: background-color 0.5s, color 0.5s; /* Smooth transitions */
 }
 
+/* Header styles */
+#header-placeholder {
+  height: 56px; /* Adjust this value based on the actual height of your navbar */
+}
+
+/* Light theme styles */
+body.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light-theme .navbar,
+body.light-theme .navbar-brand,
+body.light-theme .navbar-nav .nav-link {
+  color: #000000 !important;
+}
+
+body.light-theme .top-container {
+  background-color: #e4f9f5; /* Light theme background color */
+}
+
+body.light-theme .middle-container {
+  background-color: #ffffff; /* Light theme background color */
+}
+
+body.light-theme .bottom-container {
+  background-color: #66bfbf; /* Light theme background color */
+}
+
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3 {
+  color: #000000;
+}
+
+/* Dark theme styles */
+body.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-theme .navbar,
+body.dark-theme .navbar-brand,
+body.dark-theme .navbar-nav .nav-link {
+  color: #ffffff !important;
+}
+
+body.dark-theme .top-container {
+  background-color: #333333 !important; /* Dark theme background color */
+}
+
+body.dark-theme .middle-container {
+  background-color: #121212 !important; /* Dark theme background color */
+}
+
+body.dark-theme .bottom-container {
+  background-color: #1f1f1f !important; /* Dark theme background color */
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3 {
+  color: #bb86fc !important;
+}
+
+body.dark-theme a {
+  color: #bb86fc !important;
+}
+
+body.dark-theme .navbar {
+  background-color: #1f1f1f !important;
+}
+
+body.dark-theme .table {
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme .table-light {
+  background-color: #2c2c2c !important;
+}
+
+/* Typography */
 h1 {
   color: #66bfbf;
   font-size: 5.625rem;
@@ -37,6 +121,7 @@ hr {
   margin: 100px auto;
 }
 
+/* Links */
 a {
   color: #11999e;
   font-family: "Montserrat", sans-serif;
@@ -48,9 +133,10 @@ a:hover {
   color: #eaf6f6;
 }
 
+/* Image container */
 .image-container {
   position: relative;
-  height: calc(100vh - 56px);
+  height: calc(100vh - 56px); /* Adjust height to account for the header */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -64,19 +150,24 @@ a:hover {
   color: white;
 }
 
+/* Containers */
 .top-container {
   background-color: #e4f9f5;
   position: relative;
   padding-top: 100px;
+  transition: background-color 0.5s ease;
 }
 
 .middle-container {
   margin: 100px 0;
+  background-color: #ffffff; /* Default light theme background */
+  transition: background-color 0.5s ease;
 }
 
 .bottom-container {
   background-color: #66bfbf;
   padding: 50px 0 20px;
+  transition: background-color 0.5s ease;
 }
 
 .skill-row {
@@ -128,6 +219,7 @@ a:hover {
   margin-left: 30px;
 }
 
+/* Buttons */
 .btn {
   background: #11cdd4;
   background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
@@ -155,6 +247,7 @@ a:hover {
   text-decoration: none;
 }
 
+/* Parent container */
 .parent {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
@@ -165,24 +258,24 @@ a:hover {
   row-gap: 2rem;
 }
 
-/* Ensure the navbar background is transparent */
+/* Navbar styles */
 .navbar {
   background-color: transparent !important;
   transition: background-color 0.5s ease;
 }
+
+/* Navbar background color when scrolled */
 .navbar-shrink {
   background-color: rgba(0, 0, 0, 0.8) !important; /* Adjust this color to fit your design */
 }
-.header-placeholder {
-  height: 56px; /* Adjust this value based on the actual height of your navbar */
-}
-/* Ensure the dropdown menu has a solid background to be readable */
+
+/* Dropdown menu */
 .dropdown-menu {
   background-color: #343a40;
   border: none;
 }
 
-/* Ensure the nav links have a color that is readable over the transparent background */
+/* Navbar links */
 .nav-link {
   color: #fff !important;
 }
@@ -200,7 +293,7 @@ a:hover {
   color: #fff;
 }
 
-/* Adjust dropdown item colors */
+/* Dropdown item */
 .dropdown-item {
   color: #fff;
 }
@@ -208,62 +301,6 @@ a:hover {
 .dropdown-item:hover,
 .dropdown-item:focus {
   background-color: #495057;
-}
-
-/* Dark theme styles */
-body.dark-theme {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.dark-theme h1,
-body.dark-theme h2,
-body.dark-theme h3 {
-  color: #bb86fc;
-}
-
-body.dark-theme a {
-  color: #bb86fc;
-}
-
-body.dark-theme .navbar {
-  background-color: #1f1f1f !important;
-}
-
-body.dark-theme .table {
-  color: #e0e0e0;
-}
-
-body.dark-theme .table-dark {
-  background-color: #2c2c2c;
-}
-
-/* Light theme styles */
-body.light-theme {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-body.light-theme h1,
-body.light-theme h2,
-body.light-theme h3 {
-  color: #000000;
-}
-
-body.light-theme a {
-  color: #11999e;
-}
-
-body.light-theme .navbar {
-  background-color: #e4f9f5 !important;
-}
-
-body.light-theme .table {
-  color: #000000;
-}
-
-body.light-theme .table-light {
-  background-color: #ffffff;
 }
 
 /* List styles */
