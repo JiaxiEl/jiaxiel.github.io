@@ -8,146 +8,41 @@ body {
   transition: background-color 0.5s, color 0.5s; /* Smooth transitions */
 }
 
-/* Header styles */
-#header-placeholder {
-  height: 56px; /* Adjust this value based on the actual height of your navbar */
-}
-
-/* Light theme styles */
 body.light-theme {
   background-color: #ffffff;
   color: #000000;
 }
 
-body.light-theme .navbar,
-body.light-theme .navbar-brand,
-body.light-theme .navbar-nav .nav-link {
-  color: #000000 !important;
-}
-
-body.light-theme .top-container {
-  background-color: #e4f9f5; /* Light theme background color */
-}
-
-body.light-theme .middle-container {
-  background-color: #ffffff; /* Light theme background color */
-}
-
-body.light-theme .bottom-container {
-  background-color: #66bfbf; /* Light theme background color */
-}
-
-body.light-theme h1,
-body.light-theme h2,
-body.light-theme h3 {
-  color: #000000;
-}
-
-/* Dark theme styles */
 body.dark-theme {
   background-color: #121212;
   color: #e0e0e0;
 }
 
-body.dark-theme .navbar,
+/* Header styles */
+#header-placeholder {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  background-color: #000000 !important; /* Always black */
+}
+
+.navbar-brand,
+.nav-link {
+  color: #ffffff !important; /* Ensure text is white */
+}
+
+body.light-theme .navbar-brand,
+body.light-theme .nav-link {
+  color: #ffffff !important; /* Ensure text is white in light theme */
+}
+
 body.dark-theme .navbar-brand,
-body.dark-theme .navbar-nav .nav-link {
-  color: #ffffff !important;
-}
-
-body.dark-theme .top-container {
-  background-color: #333333 !important; /* Dark theme background color */
-}
-
-body.dark-theme .middle-container {
-  background-color: #121212 !important; /* Dark theme background color */
-}
-
-body.dark-theme .bottom-container {
-  background-color: #1f1f1f !important; /* Dark theme background color */
-}
-
-body.dark-theme h1,
-body.dark-theme h2,
-body.dark-theme h3 {
-  color: #bb86fc !important;
-}
-
-body.dark-theme a {
-  color: #bb86fc !important;
-}
-
-body.dark-theme .navbar {
-  background-color: #1f1f1f !important;
-}
-
-body.dark-theme .table {
-  color: #e0e0e0 !important;
-}
-
-body.dark-theme .table-light {
-  background-color: #2c2c2c !important;
-}
-
-/* Typography */
-h1 {
-  color: #66bfbf;
-  font-size: 5.625rem;
-  margin: 50px auto 0 auto;
-  font-family: "Sacramento", cursive;
-}
-
-h2 {
-  color: #66bfbf;
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem;
-  font-weight: normal;
-  padding-bottom: 10px;
-}
-
-h3 {
-  color: #11999e;
-  font-family: "Montserrat", sans-serif;
-}
-
-p {
-  line-height: 2;
-}
-
-hr {
-  border: dotted #eaf6f6 6px;
-  border-bottom: none;
-  width: 4%;
-  margin: 100px auto;
-}
-
-/* Links */
-a {
-  color: #11999e;
-  font-family: "Montserrat", sans-serif;
-  margin: 10px 20px;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #eaf6f6;
-}
-
-/* Image container */
-.image-container {
-  position: relative;
-  height: calc(100vh - 56px); /* Adjust height to account for the header */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title-text {
-  color: white;
+body.dark-theme .nav-link {
+  color: #ffffff !important; /* Ensure text is white in dark theme */
 }
 
 /* Containers */
@@ -158,9 +53,13 @@ a:hover {
   transition: background-color 0.5s ease;
 }
 
+body.dark-theme .top-container {
+  background-color: #333333;
+}
+
 .middle-container {
   margin: 100px 0;
-  background-color: #ffffff; /* Default light theme background */
+  background-color: inherit; /* Match the theme background */
   transition: background-color 0.5s ease;
 }
 
@@ -170,56 +69,99 @@ a:hover {
   transition: background-color 0.5s ease;
 }
 
-.skill-row {
-  width: 50%;
-  margin: 100px auto 100px auto;
-  text-align: left;
+body.light-theme .bottom-container {
+  background-color: #66bfbf;
 }
 
-.pro {
-  text-decoration: underline;
+body.dark-theme .bottom-container {
+  background-color: #1f1f1f;
 }
 
-.intro {
-  width: 30%;
-  margin: auto;
+/* Typography */
+h1 {
+  color: #66bfbf;
+  font-size: 5.625rem;
+  margin: 50px auto 0 auto;
+  font-family: "Sacramento", cursive;
+  animation: fadeInDown 1s;
 }
 
-.contact-message {
-  width: 40%;
-  margin: 40px auto 60px;
+h2 {
+  color: #66bfbf;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+  padding-bottom: 10px;
+  animation: fadeInUp 1s;
 }
 
-.copyright {
+h3 {
+  color: #11999e;
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  line-height: 2;
+  animation: fadeIn 1s;
+}
+
+hr {
+  border: dotted #eaf6f6 6px;
+  border-bottom: none;
+  width: 4%;
+  margin: 100px auto;
+  animation: fadeIn 1s;
+}
+
+/* Links */
+a {
+  color: #11999e;
+  font-family: "Montserrat", sans-serif;
+  margin: 10px 20px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
   color: #eaf6f6;
-  font-size: 0.75rem;
-  padding: 20px 0;
 }
 
-.top-cloud {
-  position: absolute;
-  right: 300px;
-  top: 40px;
+.navbar .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
 }
 
-.bottom-cloud {
-  position: absolute;
-  left: 250px;
-  bottom: 300px;
+.navbar .nav-link i {
+  margin-right: 8px;
 }
 
-.code-img {
-  width: 25%;
-  float: left;
-  margin-right: 30px;
+/* Image container */
+.image-container {
+  position: relative;
+  height: calc(100vh - 56px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 1s;
 }
 
-.chilli-img {
-  width: 50%;
-  margin-left: 30px;
+.title-text {
+  color: white;
 }
 
 /* Buttons */
+.btn.theme-toggle-btn {
+  padding: 5px 10px;
+  font-size: 1.25rem;
+  border-radius: 4px;
+  line-height: 1.5;
+}
+
 .btn {
   background: #11cdd4;
   background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
@@ -235,6 +177,7 @@ a:hover {
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  transition: background 0.3s;
 }
 
 .btn:hover {
@@ -247,82 +190,47 @@ a:hover {
   text-decoration: none;
 }
 
-/* Parent container */
-.parent {
-  display: grid;
-  grid-template-columns: 0.5fr 1fr;
-  grid-template-rows: repeat(1, 1fr);
-  width: 50%;
-  margin: 100px auto 0 auto;
-  text-align: left;
-  row-gap: 2rem;
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-/* Navbar styles */
-.navbar {
-  background-color: transparent !important;
-  transition: background-color 0.5s ease;
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Navbar background color when scrolled */
-.navbar-shrink {
-  background-color: rgba(0, 0, 0, 0.8) !important; /* Adjust this color to fit your design */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Dropdown menu */
-.dropdown-menu {
-  background-color: #343a40;
-  border: none;
-}
-
-/* Navbar links */
-.nav-link {
-  color: #fff !important;
-}
-
-.navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-
-.navbar-brand,
-.nav-link {
-  color: #fff;
-}
-
-/* Dropdown item */
-.dropdown-item {
-  color: #fff;
-}
-
-.dropdown-item:hover,
-.dropdown-item:focus {
-  background-color: #495057;
-}
-
-/* List styles */
+/* List styles for left alignment */
 ul {
   list-style-position: outside;
-  padding-left: 20px;
-  margin-left: 0;
-  text-align: left; /* Ensure the text is left-aligned */
+  padding-left: 40px;
+  text-align: left;
 }
 
 li {
-  margin: 0 0 10px 20px;
+  margin: 0 0 10px 0;
   padding: 0;
-  text-align: left; /* Ensure the text is left-aligned */
-}
-
-ul ul {
-  margin-left: 20px;
-  text-align: left; /* Ensure the text is left-aligned for nested lists */
-}
-
-ul ul li {
-  margin-left: 0;
-  text-align: left; /* Ensure the text is left-aligned for nested list items */
+  text-align: left;
 }
