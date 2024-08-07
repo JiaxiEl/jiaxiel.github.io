@@ -54,6 +54,16 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch(err => console.error('Failed to load header:', err));
   }
 
+  // Function to load footer
+  function loadFooter() {
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('footer-placeholder').innerHTML = html;
+      })
+      .catch(err => console.error('Failed to load footer:', err));
+  }
+
   // Function to shrink the navbar
   function navbarShrink() {
     const navbarCollapsible = document.body.querySelector('#mainNav');
@@ -81,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Initial function calls
   loadHeader();
+  loadFooter();
   setBackgroundImage();
   navbarShrink();
 

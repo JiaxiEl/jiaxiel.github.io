@@ -6,6 +6,9 @@ body {
   font-family: "Merriweather", serif;
   padding-top: 56px;
   transition: background-color 0.5s, color 0.5s; /* Smooth transitions */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 body.light-theme {
@@ -43,6 +46,14 @@ body.light-theme .nav-link {
 body.dark-theme .navbar-brand,
 body.dark-theme .nav-link {
   color: #ffffff !important; /* Ensure text is white in dark theme */
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 /* Containers */
@@ -190,6 +201,23 @@ a:hover {
   text-decoration: none;
 }
 
+/* Footer links */
+.footer-link {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  margin-top: 15px;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
@@ -225,7 +253,7 @@ a:hover {
 /* List styles for left alignment */
 ul {
   list-style-position: outside;
-  padding-left: 40px;
+  padding-left: 40px; /* Adjust as necessary */
   text-align: left;
 }
 
