@@ -262,3 +262,33 @@ li {
   padding: 0;
   text-align: left;
 }
+
+/* Table styles for better readability */
+.table {
+  background-color: inherit; /* Ensure it matches the current theme */
+}
+
+body.dark-theme .table {
+  background-color: #333333;
+  color: #e0e0e0;
+}
+
+body.light-theme .table {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.table th,
+.table td {
+  border-color: #ddd;
+  padding: 15px;
+}
+
+.table thead th {
+  background-color: #f8f9fa;
+}
+
+body.dark-theme .table thead th {
+  background-color: #444444;
+  color: #e0e0e0;
+}
