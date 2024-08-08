@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/assets/js/app.js', // Updated path
+  entry: './src/assets/js/app.js', // Adjust based on your entry file
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, '../dist'),
@@ -63,7 +63,7 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: 'asset/resource',
       }
     ]
