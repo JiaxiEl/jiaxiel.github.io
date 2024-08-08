@@ -10,36 +10,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const currentTheme = localStorage.getItem('theme') || 'light';
-    if (currentTheme === 'dark') {
-      document.body.classList.add('dark-theme');
-      document.body.classList.remove('light-theme');
-      themeIcon.classList.remove('fa-lightbulb');
-      themeIcon.classList.add('fa-lightbulb-on');
-    } else {
-      document.body.classList.add('light-theme');
-      document.body.classList.remove('dark-theme');
-      themeIcon.classList.remove('fa-lightbulb-on');
-      themeIcon.classList.add('fa-lightbulb');
-    }
+    setTheme(currentTheme);
 
     themeToggleButton.addEventListener('click', function () {
-      if (document.body.classList.contains('dark-theme')) {
-        document.body.classList.remove('dark-theme');
-        document.body.classList.add('light-theme');
-        themeIcon.classList.remove('fa-lightbulb-on');
-        themeIcon.classList.add('fa-lightbulb');
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.body.classList.remove('dark-theme');
-        document.body.classList.add('light-theme');
-        themeIcon.classList.remove('fa-lightbulb');
-        themeIcon.classList.add('fa-lightbulb-on');
-        localStorage.setItem('theme', 'dark');
-      }
-      console.log(`Theme changed to: ${document.body.classList.contains('dark-theme') ? 'dark' : 'light'}`);
+      const newTheme = document.body.classList.contains('dark-theme') ? 'light' : 'dark';
+      setTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+      console.log(`Theme changed to: ${newTheme}`);
     });
 
     console.log('Theme toggle initialized.');
+  }
+
+  function setTheme(theme) {
+    const themeIcon = document.getElementById('theme-icon');
+    if (theme === 'dark') {
+      document.body.classList.add('dark-theme');
+      document.body.classList.remove('light-theme');
+      themeIcon.classList.remove('fa-toggle-on');
+      themeIcon.classList.add('fa-toggle-off');
+    } else {
+      document.body.classList.add('light-theme');
+      document.body.classList.remove('dark-theme');
+      themeIcon.classList.remove('fa-toggle-off');
+      themeIcon.classList.add('fa-toggle-on');
+    }
   }
 
   function loadHeader() {

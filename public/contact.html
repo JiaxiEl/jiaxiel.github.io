@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Sacramento&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
+
+  <!-- Inline script to apply the correct theme class immediately -->
+  <script>
+    (function() {
+      var currentTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.classList.add(currentTheme + '-theme');
+    })();
+  </script>
 </head>
 <body class="d-flex flex-column min-vh-100">
 <div id="header-placeholder"></div>
