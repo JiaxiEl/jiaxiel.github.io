@@ -11,43 +11,38 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './public/index.html',
       filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/about.html',
+      template: './public/about.html',
       filename: 'about.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/contact.html',
+      template: './public/contact.html',
       filename: 'contact.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/footer.html',
+      template: './public/footer.html',
       filename: 'footer.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/header.html',
+      template: './public/header.html',
       filename: 'header.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/portfolio.html',
+      template: './public/portfolio.html',
       filename: 'portfolio.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/sidebar.html',
-      filename: 'sidebar.html'
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'assets/img', to: 'img' },
-        { from: 'assets/css', to: 'css' },
-        { from: 'assets/js/vendor', to: 'js/vendor' },
-        { from: 'assets/favicon.ico', to: 'favicon.ico' },
-        { from: 'assets/robots.txt', to: 'robots.txt' },
-        { from: 'assets/icon.png', to: 'icon.png' },
-        { from: '404.html', to: '404.html' },
-        { from: 'site.webmanifest', to: 'site.webmanifest' }
+        { from: './src/assets/img', to: 'img' },
+        { from: './src/assets/css', to: 'css' },
+        { from: './src/assets/js/vendor', to: 'js/vendor' },
+        { from: './src/assets/favicon.ico', to: 'favicon.ico' },
+        { from: './public/robots.txt', to: 'robots.txt' },
+        { from: './public/site.webmanifest', to: 'site.webmanifest' },
+        { from: './public/404.html', to: '404.html' }
       ]
     })
   ],
