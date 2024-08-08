@@ -3,9 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/assets/js/app.js', // Adjust based on your entry file
+  entry: {
+    app: './src/assets/js/app.js',
+    footer: './src/assets/js/footer.js' // Add footer.js as an entry point
+  },
   output: {
-    filename: 'bundle.js',
+    filename: 'js/[name].js', // Use [name] to output multiple entry points
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/'
   },
@@ -40,14 +43,12 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
+        { from: 'public/favicon.ico', to: 'favicon.ico' },
+        { from: 'public/robots.txt', to: 'robots.txt' },
+        { from: 'public/site.webmanifest', to: 'site.webmanifest' },
         { from: 'src/assets/img', to: 'img' },
         { from: 'src/assets/css', to: 'css' },
         { from: 'src/assets/js/vendor', to: 'js/vendor' },
-        { from: 'public/favicon.ico', to: 'favicon.ico' },
-        { from: 'public/robots.txt', to: 'robots.txt' },
-        { from: 'public/icon.png', to: 'icon.png' },
-        { from: 'public/404.html', to: '404.html' },
-        { from: 'public/site.webmanifest', to: 'site.webmanifest' }
       ]
     })
   ],
@@ -63,7 +64,7 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       }
     ]
