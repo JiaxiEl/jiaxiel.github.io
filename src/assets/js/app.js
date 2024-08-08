@@ -77,16 +77,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Function to set random background image
+  // Array of image paths
+  const images = [
+    "../src/assets/img/image1.jpg",
+    "../src/assets/img/image2.jpg",
+    "../src/assets/img/image3.jpg",
+    // Add more images as needed
+  ];
+
+  // Function to select a random image
+  function getRandomImage() {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    return images[randomIndex];
+  }
+
+  // Function to set the background image of the container
   function setBackgroundImage() {
-    const images = [
-      "assets/img/Image1.jpg",
-      "assets/img/Image2.jpg",
-      "assets/img/Image3.jpg",
-      // Add more images as needed
-    ];
-    const randomImage = images[Math.floor(Math.random() * images.length)];
-    document.querySelector('.image-container').style.backgroundImage = `url('${randomImage}')`;
+    const imageContainer = document.querySelector('.image-container');
+    if (imageContainer) {
+      imageContainer.style.backgroundImage = `url('${getRandomImage()}')`;
+    }
   }
 
   // Initial function calls
