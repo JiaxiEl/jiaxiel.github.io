@@ -1,16 +1,100 @@
+/* General body styles */
 body {
   color: #40514e;
   margin: 0;
   text-align: center;
   font-family: "Merriweather", serif;
   padding-top: 56px;
+  transition: background-color 0.5s, color 0.5s; /* Smooth transitions */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+body.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Header styles */
+#header-placeholder {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  background-color: #000000 !important; /* Always black */
+}
+
+.navbar-brand,
+.nav-link {
+  color: #ffffff !important; /* Ensure text is white */
+}
+
+body.light-theme .navbar-brand,
+body.light-theme .nav-link {
+  color: #ffffff !important; /* Ensure text is white in light theme */
+}
+
+body.dark-theme .navbar-brand,
+body.dark-theme .nav-link {
+  color: #ffffff !important; /* Ensure text is white in dark theme */
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Containers */
+.top-container {
+  background-color: #e4f9f5;
+  position: relative;
+  padding-top: 100px;
+  transition: background-color 0.5s ease;
+}
+
+body.dark-theme .top-container {
+  background-color: #333333;
+}
+
+.middle-container {
+  margin: 100px 0;
+  background-color: inherit; /* Match the theme background */
+  transition: background-color 0.5s ease;
+}
+
+.bottom-container {
+  background-color: #66bfbf;
+  padding: 50px 0 20px;
+  transition: background-color 0.5s ease;
+}
+
+body.light-theme .bottom-container {
+  background-color: #66bfbf;
+}
+
+body.dark-theme .bottom-container {
+  background-color: #1f1f1f;
+}
+
+/* Typography */
 h1 {
   color: #66bfbf;
   font-size: 5.625rem;
   margin: 50px auto 0 auto;
   font-family: "Sacramento", cursive;
+  animation: fadeInDown 1s;
 }
 
 h2 {
@@ -19,6 +103,7 @@ h2 {
   font-size: 2.5rem;
   font-weight: normal;
   padding-bottom: 10px;
+  animation: fadeInUp 1s;
 }
 
 h3 {
@@ -28,6 +113,7 @@ h3 {
 
 p {
   line-height: 2;
+  animation: fadeIn 1s;
 }
 
 hr {
@@ -35,97 +121,56 @@ hr {
   border-bottom: none;
   width: 4%;
   margin: 100px auto;
+  animation: fadeIn 1s;
 }
 
+/* Links */
 a {
   color: #11999e;
   font-family: "Montserrat", sans-serif;
   margin: 10px 20px;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 a:hover {
   color: #eaf6f6;
 }
 
+.navbar .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.navbar .nav-link i {
+  margin-right: 8px;
+}
+
+/* Image container */
 .image-container {
   position: relative;
-  height: 100vh; /* Cover the entire viewport height */
-  background-size: cover; /* Ensure the image covers the entire container */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
+  height: calc(100vh - 56px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  animation: fadeIn 1s;
 }
 
 .title-text {
-  color: white; /* Ensure text is visible over the background */
+  color: white;
 }
 
-.top-container {
-  background-color: #e4f9f5;
-  position: relative;
-  padding-top: 100px;
-}
-
-.middle-container {
-  margin: 100px 0;
-}
-
-.bottom-container {
-  background-color: #66bfbf;
-  padding: 50px 0 20px;
-}
-
-.skill-row {
-  width: 50%;
-  margin: 100px auto 100px auto;
-  text-align: left;
-}
-
-.pro {
-  text-decoration: underline;
-}
-
-.intro {
-  width: 30%;
-  margin: auto;
-}
-
-.contact-message {
-  width: 40%;
-  margin: 40px auto 60px;
-}
-
-.copyright {
-  color: #eaf6f6;
-  font-size: 0.75rem;
-  padding: 20px 0;
-}
-
-.top-cloud {
-  position: absolute;
-  right: 300px;
-  top: 40px;
-}
-
-.bottom-cloud {
-  position: absolute;
-  left: 250px;
-  bottom: 300px;
-}
-
-.code-img {
-  width: 25%;
-  float: left;
-  margin-right: 30px;
-}
-
-.chilli-img {
-  width: 50%;
-  margin-left: 30px;
+/* Buttons */
+.btn.theme-toggle-btn {
+  padding: 5px 10px;
+  font-size: 1.25rem;
+  border-radius: 4px;
+  line-height: 1.5;
 }
 
 .btn {
@@ -143,6 +188,7 @@ a:hover {
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  transition: background 0.3s;
 }
 
 .btn:hover {
@@ -155,52 +201,94 @@ a:hover {
   text-decoration: none;
 }
 
-.parent {
-  display: grid;
-  grid-template-columns: 0.5fr 1fr;
-  grid-template-rows: repeat(1, 1fr);
-  width: 50%;
-  margin: 100px auto 0 auto;
+/* Footer links */
+.footer-link {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  margin-top: 15px;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* List styles for left alignment */
+ul {
+  list-style-position: outside;
+  padding-left: 40px; /* Adjust as necessary */
   text-align: left;
-  row-gap: 2rem;
-}
-/* Ensure the navbar background is transparent */
-.navbar {
-  background-color: transparent !important;
-  transition: background-color 0.5s ease;
 }
 
-/* Ensure the dropdown menu has a solid background to be readable */
-.dropdown-menu {
-  background-color: #343a40; /* Adjust based on your theme */
-  border: none;
+li {
+  margin: 0 0 10px 0;
+  padding: 0;
+  text-align: left;
 }
 
-/* Ensure the nav links have a color that is readable over the transparent background */
-.nav-link {
-  color: #fff !important;
+/* Table styles for better readability */
+.table {
+  background-color: inherit; /* Ensure it matches the current theme */
 }
 
-.navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.1);
+body.dark-theme .table {
+  background-color: #333333;
+  color: #e0e0e0;
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+body.light-theme .table {
+  background-color: #ffffff;
+  color: #000000;
 }
 
-.navbar-brand,
-.nav-link {
-  color: #fff;
+.table th,
+.table td {
+  border-color: #ddd;
+  padding: 15px;
 }
 
-/* Adjust dropdown item colors */
-.dropdown-item {
-  color: #fff;
+.table thead th {
+  background-color: #f8f9fa;
 }
 
-.dropdown-item:hover,
-.dropdown-item:focus {
-  background-color: #495057;
+body.dark-theme .table thead th {
+  background-color: #444444;
+  color: #e0e0e0;
 }
-
