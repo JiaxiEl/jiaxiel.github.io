@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: {
     app: './src/assets/js/app.js',
-    footer: './src/assets/js/footer.js' // Add footer.js as an entry point
+    footer: './src/assets/js/component.js' // Add component.js as an entry point
   },
   output: {
     filename: 'js/[name].js', // Use [name] to output multiple entry points

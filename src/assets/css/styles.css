@@ -17,7 +17,7 @@ body.light-theme {
 }
 
 body.dark-theme {
-  background-color: #121212;
+  background-color: #000000;
   color: #e0e0e0;
 }
 
@@ -65,7 +65,7 @@ body.dark-theme .nav-link {
 }
 
 body.dark-theme .top-container {
-  background-color: #333333;
+  background-color: #000000;
 }
 
 .middle-container {
@@ -85,7 +85,7 @@ body.light-theme .bottom-container {
 }
 
 body.dark-theme .bottom-container {
-  background-color: #1f1f1f;
+  background-color: #000000;
 }
 
 /* Typography */
@@ -150,7 +150,7 @@ a:hover {
 /* Image container */
 .image-container {
   position: relative;
-  height: calc(100vh - 56px);
+  height: 100vh; /* Full viewport height */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -159,6 +159,8 @@ a:hover {
   align-items: center;
   text-align: center;
   animation: fadeIn 1s;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
 }
 
 .title-text {
@@ -269,7 +271,7 @@ li {
 }
 
 body.dark-theme .table {
-  background-color: #333333;
+  background-color: #000000;
   color: #e0e0e0;
 }
 
@@ -289,6 +291,103 @@ body.light-theme .table {
 }
 
 body.dark-theme .table thead th {
-  background-color: #444444;
+  background-color: #000000;
   color: #e0e0e0;
+}
+
+.text-start p {
+  text-align: left;
+}
+
+.text-center h2 {
+  margin-bottom: 20px;
+}
+
+
+.container .col-md-8 {
+  margin-left: auto;
+  margin-right: auto;
+}
+.container .row {
+  margin: 0 auto; /* Ensure the row is centered */
+}
+
+.container .col-md-8 {
+  padding: 0; /* Remove any padding that might affect alignment */
+}
+#footer-placeholder {
+  background-color: #f8f9fa; /* Default light background */
+  transition: background-color 0.5s ease;
+}
+
+body.dark-theme #footer-placeholder {
+  background-color: #000000; /* Change to black for dark theme */
+}
+/* Container adjustments */
+body.dark-theme .container {
+  background-color: #000000; /* Black background for dark theme */
+  color: #e0e0e0; /* Light text for contrast */
+  width: 100%; /* Ensure it takes full width */
+}
+body.dark-theme .container .row {
+  margin: 0; /* Remove any row margin to eliminate gaps */
+}
+
+body.dark-theme .container .skills p,
+body.dark-theme .container h2,
+body.dark-theme .container p {
+  color: #e0e0e0; /* Ensure all text inside the container is light */
+}
+/* Ensure the body and html have no margin or padding */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #121212; /* Set the background to match the dark theme */
+}
+
+/* Top container adjustments */
+body.dark-theme .top-container {
+  background-color: #000000; /* Match background color */
+}
+
+/* Adjust the middle-container */
+body.dark-theme .middle-container {
+  background-color: #000000; /* Ensure consistency with dark theme */
+  padding: 20px; /* Add padding if needed */
+  margin: 0; /* Remove margin */
+  width: 100%;
+}
+
+/* Adjust bottom container */
+body.dark-theme .bottom-container {
+  background-color: #000000; /* Ensure it matches the rest */
+  padding: 50px 0 20px; /* Adjust padding as needed */
+  margin: 0; /* Remove margin */
+  width: 100%;
+}
+
+/* Adjust the header and footer placeholders to ensure no gaps */
+#header-placeholder, #footer-placeholder {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body.dark-theme .alert {
+  background-color: #000000; /* Dark background for the alert */
+  color: #e0e0e0; /* Light text color */
+}
+body.dark-theme .contact-container {
+  background-color: #000000; /* Black background for the dark theme */
+  color: #e0e0e0; /* Light text for contrast */
+}
+body, html {
+  margin: 0;
+  padding: 0;
+}
+#header-placeholder, #footer-placeholder {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
