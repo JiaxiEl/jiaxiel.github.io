@@ -371,44 +371,39 @@ body, html {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #121212; /* Set the background to match the dark theme */
+  height: 100%; /* Ensure body and html take the full height */
 }
 
-/* Top container adjustments */
-body.dark-theme .top-container {
-  background-color: #000000;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Adjust the middle-container */
-body.dark-theme .middle-container {
-  background-color: #000000; /* Ensure consistency with dark theme */
-  padding: 20px; /* Add padding if needed */
-  margin: 0; /* Remove margin */
-  width: 100%;
+.container {
+  flex: 1; /* Allow container to grow and push footer down */
 }
 
-/* Adjust bottom container */
-body.dark-theme .bottom-container {
-  background-color: #000000; /* Ensure it matches the rest */
-  padding: 50px 0 20px; /* Adjust padding as needed */
-  margin: 0; /* Remove margin */
-  width: 100%;
+footer.bottom-container {
+  background-color: #66bfbf;
+  padding: 20px;
+  text-align: center;
 }
 
-/* Adjust the header and footer placeholders to ensure no gaps */
-#header-placeholder, #footer-placeholder {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+footer.bottom-container .footer-link {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ffffff;
 }
 
-body.dark-theme .alert {
-  background-color: #000000; /* Dark background for the alert */
-  color: #e0e0e0; /* Light text color */
+footer.bottom-container .footer-link:hover {
+  text-decoration: underline;
 }
-body.dark-theme .contact-container {
-  background-color: #000000; /* Black background for the dark theme */
-  color: #e0e0e0; /* Light text for contrast */
+
+footer.bottom-container .copyright {
+  margin-top: 15px;
+  color: #ffffff;
+  font-size: 0.875rem;
 }
 
 /* Portfolio specific styles */
@@ -434,6 +429,7 @@ body.dark-theme .contact-container {
   margin-bottom: 0.2rem; /* Further reduce the margin between entries */
   padding-bottom: 0; /* Remove any padding at the bottom */
 }
+
 .portfolio-entry a {
   color: #66bfbf; /* Adjust color */
   text-decoration: none;
@@ -468,57 +464,10 @@ body.dark-theme .contact-container {
     margin-top: 0.2rem;
   }
 }
+
 a.non-clickable {
   pointer-events: none;
   cursor: default;
   color: #000000 !important; /* Force the color to black */
   text-decoration: none; /* Remove underline */
-}
-.container {
-  flex-grow: 1;
-}
-
-footer.bottom-container {
-  background-color: #66bfbf;
-  padding: 20px;
-  text-align: center;
-}
-
-footer.bottom-container .footer-link {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #ffffff;
-}
-
-footer.bottom-container .footer-link:hover {
-  text-decoration: underline;
-}
-
-footer.bottom-container .copyright {
-  margin-top: 15px;
-  color: #ffffff;
-  font-size: 0.875rem;
-}
-
-#header-placeholder,
-#top-container-placeholder {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%; /* Ensure body and html take the full height */
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  flex: 1; /* Allow container to grow and push footer down */
 }
