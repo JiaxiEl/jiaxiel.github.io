@@ -475,5 +475,28 @@ a.non-clickable {
   color: #000000 !important; /* Force the color to black */
   text-decoration: none; /* Remove underline */
 }
+.container {
+  flex-grow: 1;
+}
 
+footer.bottom-container {
+  background-color: #66bfbf;
+  padding: 20px;
+  text-align: center;
+}
 
+footer.bottom-container .footer-link {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+footer.bottom-container .footer-link:hover {
+  text-decoration: underline;
+}
+
+footer.bottom-container .copyright {
+  margin-top: 15px;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
