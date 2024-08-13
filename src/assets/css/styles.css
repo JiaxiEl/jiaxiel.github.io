@@ -62,10 +62,37 @@ body.dark-theme .nav-link {
   position: relative;
   padding-top: 100px;
   transition: background-color 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body.dark-theme .top-container {
   background-color: #000000;
+}
+
+.avatar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+}
+
+/* Avatar image styling */
+.avatar-image {
+  width: 150px; /* Adjust the size as needed */
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+}
+
+/* Title text styling */
+.title-text {
+  text-align: center;
+  flex-grow: 1; /* Makes sure the text takes the available space between avatars */
+  padding: 0 20px; /* Add some padding around the text */
 }
 
 .middle-container {
@@ -303,7 +330,6 @@ body.dark-theme .table thead th {
   margin-bottom: 20px;
 }
 
-
 .container .col-md-8 {
   margin-left: auto;
   margin-right: auto;
@@ -315,6 +341,7 @@ body.dark-theme .table thead th {
 .container .col-md-8 {
   padding: 0; /* Remove any padding that might affect alignment */
 }
+
 #footer-placeholder {
   background-color: #f8f9fa; /* Default light background */
   transition: background-color 0.5s ease;
@@ -323,6 +350,7 @@ body.dark-theme .table thead th {
 body.dark-theme #footer-placeholder {
   background-color: #000000; /* Change to black for dark theme */
 }
+
 /* Container adjustments */
 body.dark-theme .container {
   background-color: #000000; /* Black background for dark theme */
@@ -338,6 +366,7 @@ body.dark-theme .container h2,
 body.dark-theme .container p {
   color: #e0e0e0; /* Ensure all text inside the container is light */
 }
+
 /* Ensure the body and html have no margin or padding */
 body, html {
   margin: 0;
@@ -348,7 +377,7 @@ body, html {
 
 /* Top container adjustments */
 body.dark-theme .top-container {
-  background-color: #000000; /* Match background color */
+  background-color: #000000;
 }
 
 /* Adjust the middle-container */
@@ -382,12 +411,69 @@ body.dark-theme .contact-container {
   background-color: #000000; /* Black background for the dark theme */
   color: #e0e0e0; /* Light text for contrast */
 }
-body, html {
-  margin: 0;
-  padding: 0;
+
+/* Portfolio specific styles */
+.portfolio-item {
+  margin-bottom: 1rem;
 }
-#header-placeholder, #footer-placeholder {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+
+.portfolio-title {
+  font-size: 2rem;
+  font-weight: bold;
 }
+
+.portfolio-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.portfolio-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.2rem; /* Further reduce the margin between entries */
+  padding-bottom: 0; /* Remove any padding at the bottom */
+}
+.portfolio-entry a {
+  color: #66bfbf; /* Adjust color */
+  text-decoration: none;
+  font-weight: 500;
+  flex: 1;
+  margin-right: 10px; /* Ensure some space between link text and date */
+}
+
+.portfolio-entry a:hover {
+  text-decoration: underline;
+}
+
+.portfolio-date {
+  color: #000000; /* Ensure the date color is consistent */
+  white-space: nowrap; /* Prevent the date from wrapping to a new line */
+}
+
+.portfolio-list li {
+  margin-bottom: 0; /* Ensure no margin between list items */
+  padding: 0; /* Remove padding if any */
+  list-style: none; /* Remove bullet points */
+}
+
+@media (max-width: 768px) {
+  .portfolio-entry {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.5rem; /* Adjust margin for mobile view */
+  }
+
+  .portfolio-date {
+    margin-top: 0.2rem;
+  }
+}
+a.non-clickable {
+  pointer-events: none;
+  cursor: default;
+  color: #000000 !important; /* Force the color to black */
+  text-decoration: none; /* Remove underline */
+}
+
+

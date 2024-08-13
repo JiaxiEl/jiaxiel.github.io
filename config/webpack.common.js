@@ -49,8 +49,10 @@ module.exports = {
         { from: 'src/assets/img', to: 'img' },
         { from: 'src/assets/css', to: 'css' },
         { from: 'src/assets/js/vendor', to: 'js/vendor' },
+        { from: 'public/top-container.html', to: 'top-container.html' }, // Add this line
       ]
     })
+
   ],
   module: {
     rules: [
